@@ -4,13 +4,15 @@
 # 修改默认IP为192.168.10.1
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate 
 
-# small8
-echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
-echo 'src-git small8 https://github.com/kenzok8/small-package' >>feeds.conf.default
+# Hello World
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 
 # luci-theme-infinityfreedom
 echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
+
+# passwall
+echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
+echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall2.git" >> feeds.conf.default
 
 # 替换默认主题
 rm -rf package/lean/luci-theme-argon 
